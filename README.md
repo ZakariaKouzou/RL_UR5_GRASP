@@ -67,8 +67,8 @@ RL_UR5_GRASP/
 - [mink](https://github.com/kevinzakka/mink) (IK solver)
 - [Gymnasium](https://gymnasium.farama.org/)
 - [Stable-Baselines3](https://stable-baselines3.readthedocs.io/)
-- `loop_rate_limiters`
-- `numpy`
+- [`loop_rate_limiters`](https://github.com/kevinzakka/loop-rate-limiters)
+- [`numpy`](https://numpy.org/)
 
 ## Installation
 
@@ -144,4 +144,14 @@ This automatically loads the most recently saved checkpoint in `models/` and run
 | **Reward** | Dense: negative distance to cube, small action penalty, +1 for a valid two-pad grasp, +5 × lift height while grasping, +20 on success |
 | **Success condition** | Cube grasped (contact force on both gripper pads) **and** lifted above 0.15 m |
 | **Episode length** | Up to 8 simulated seconds, or early termination on success/dropped cube |
+
+## Results
+
+Training progress and evaluation metrics are logged under `logs/` and can be inspected with TensorBoard:
+
+```bash
+tensorboard --logdir logs
+```
+
+_Add your training curves / success-rate plots here once you have them._
 
