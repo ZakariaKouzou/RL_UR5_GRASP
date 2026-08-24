@@ -57,7 +57,7 @@ class UR5eGraspEnv(gym.Env):
     """
     class that inherts from the env gym 
     defines the enviromemnt for training the agent and spawns the robot in MuJuCO with that attached gripper 
-    Mink is used to simplify the action for the agent , instead of controlling joint velocity 
+    Mink is used to simplify the action for the agent , instead of controlling joint velocity seperatly  
     Mink reduces the problem by solving the IK .
     
     """
