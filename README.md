@@ -1,3 +1,4 @@
+
 # RL_UR5_GRASP
 
 A Deep Reinforcement Learning pipeline using **SAC** (Soft Actor-Critic), **Gymnasium**, and **MuJoCo** to train a UR5e robotic arm — fitted with a Robotiq 2F-85 gripper — to autonomously reach, grasp, and lift a cube. End-effector control is handled through **mink** (differential IK), so the policy operates in Cartesian action space instead of raw joint torques.
@@ -11,7 +12,13 @@ Alternatively, keep it in the repo (e.g. assets/demo.mp4) and link it:
 -->
 ## Demo
 
-_Add your demo video here._
+
+
+https://github.com/user-attachments/assets/4800bec8-f3b6-4d7a-bf31-a58c7b3f5888
+
+
+
+
 
 <!--
 🧩 BLOCK DIAGRAM
@@ -153,5 +160,8 @@ Training progress and evaluation metrics are logged under `logs/` and can be ins
 tensorboard --logdir logs
 ```
 
-_Add your training curves / success-rate plots here once you have them._
+the training results : 
+
+<img width="2131" height="834" alt="47573161-0968-490c-8de6-3d82ff73153f" src="https://github.com/user-attachments/assets/cb934a1d-c16a-4a53-aada-d53c5e5691c0" />
+
 
