@@ -3,35 +3,13 @@
 
 A Deep Reinforcement Learning pipeline using **SAC** (Soft Actor-Critic), **Gymnasium**, and **MuJoCo** to train a UR5e robotic arm — fitted with a Robotiq 2F-85 gripper — to autonomously reach, grasp, and lift a cube. End-effector control is handled through **mink** (differential IK), so the policy operates in Cartesian action space instead of raw joint torques.
 
-<!--
-🎥 DEMO VIDEO
-Drop your video file directly into this README on GitHub.com while editing —
-GitHub will upload it and auto-insert the embed link here for you.
-Alternatively, keep it in the repo (e.g. assets/demo.mp4) and link it:
-[Watch the demo](assets/demo.mp4)
--->
+
 ## Demo
 
 
 
 https://github.com/user-attachments/assets/4800bec8-f3b6-4d7a-bf31-a58c7b3f5888
 
-
-
-
-
-<!--
-🧩 BLOCK DIAGRAM
-Same idea — drag an image into the GitHub editor and it'll insert something like:
-![architecture](https://github.com/user-attachments/assets/your-image-id)
-Or save it to the repo and reference it:
-![architecture](assets/architecture.png)
--->
-## Architecture
-
-_Add your block diagram here._
-
----
 
 ## Overview
 
