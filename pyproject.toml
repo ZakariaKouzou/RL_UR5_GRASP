@@ -1,0 +1,28 @@
+[project]
+name = "rl-ur5-grasp"
+version = "0.1.0"
+description = "Reinforcement learning environment for UR5 robotic grasping."
+readme = "README.md"
+authors = [
+    { name = "Kouzou Zakaria" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "gymnasium>=1.3.0",
+    "loop-rate-limiters>=1.2.0",
+    "mink>=1.3.0",
+    "mujoco>=3.12.0",
+    "numpy>=2.2.6",
+    "rich>=15.0.0",
+    "stable-baselines3>=2.9.0",
+    "tensorboard>=2.21.0",
+    "tqdm>=4.70.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Ensures non-Python files (URDFs, STL meshes, YAMLs) are included in builds
+[tool.hatch.build.targets.wheel]
+packages = ["src/rl_ur5_grasp"]
