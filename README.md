@@ -38,7 +38,6 @@ RL_UR5_GRASP/
 │   ├── mink_test.py          # IK demo: cycle through fixed waypoints
 │   ├── mink_circulare.py     # IK demo: trace a continuous circle
 │   ├── train_grasp.py        # Train a SAC policy from scratch
-│   ├── train_continue.py     # Resume training from a saved checkpoint
 │   └── model_run.py          # Load the latest checkpoint and watch it run
 ├── models/                   # Saved checkpoints (best_model.zip, ur5e_grasp_final.zip)
 └── logs/                     # Evaluation logs / TensorBoard logs
@@ -110,8 +109,6 @@ python scripts/model_run.py
 ```
 
 This automatically loads the most recently saved checkpoint in `models/` and runs it in the MuJoCo viewer, printing per-episode results (success, final distance, grasp status, lift height).
-
-> **Note:** `train_continue.py` is left over from an earlier reach-only environment (`URReachEnv`) and isn't wired up to the current `UR5eGraspEnv` — treat it as a reference for how to resume training from a checkpoint rather than a ready-to-run script.
 
 ## Environment Details
 
