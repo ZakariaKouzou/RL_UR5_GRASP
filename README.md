@@ -64,20 +64,13 @@ RL_UR5_GRASP/
    cd RL_UR5_GRASP
    ```
 
-2. **Set up a virtual environment**
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate        # on Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
 
    ```bash
    pip install mujoco mink gymnasium stable-baselines3 numpy loop_rate_limiters
    ```
 
-4. **Get the robot models (MuJoCo Menagerie)**
+3. **Get the robot models (MuJoCo Menagerie)**
 
    The environment expects the UR5e and Robotiq 2F-85 model files. Clone Menagerie into your home directory (the default the code looks for), or point `MUJOCO_MENAGERIE_PATH` at wherever you keep it:
 
@@ -142,4 +135,4 @@ the training results :
 
 <img width="2131" height="834" alt="47573161-0968-490c-8de6-3d82ff73153f" src="https://github.com/user-attachments/assets/cb934a1d-c16a-4a53-aada-d53c5e5691c0" />
 
-
+Training converged cleanly: reward climbed from -47 to 191 over 300k steps, with a clear plateau around 100k–130k steps followed by a sharp jump once the policy learned to actually grasp and lift the cube rather than just hover nearby. Eval reward tracked closely (-29 → 195), showing no overfitting to the training env .
