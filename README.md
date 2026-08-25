@@ -121,7 +121,7 @@ This runs 300k timesteps, evaluates every 5k steps, and saves the best-performin
 **4. Watch a trained policy run:**
 
 ```bash
-python scripts/model_run.py
+python3 src/rl_ur5_grasp/scripts/model_run.py
 ```
 
 This automatically loads the most recently saved checkpoint in `models/` and runs it in the MuJoCo viewer, printing per-episode results (success, final distance, grasp status, lift height).
