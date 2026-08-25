@@ -31,16 +31,24 @@ The agent controls the arm's end-effector position (dx, dy, dz) plus a gripper o
 
 ```
 RL_UR5_GRASP/
+├── pyproject.toml               # Package configuration & dependencies
+├── uv.lock                      # Dependency lock file
+├── .gitignore                   # Git ignore rules for logs, models, and environments
+├── README.md                    # Project documentation
+└── src/
+└── rl_ur5_grasp/
+├── init.py          # Package initialization
 ├── envs/
-│   └── ur5e_grasp_env.py     # Custom Gymnasium environment (UR5eGraspEnv)
+│   ├── init.py
+│   └── ur5e_grasp_env.py# Custom Gymnasium environment (UR5eGraspEnv)
 ├── scripts/
-│   ├── spawn_view.py         # Sanity check: spawn the arm, open the viewer
-│   ├── mink_test.py          # IK demo: cycle through fixed waypoints
-│   ├── mink_circulare.py     # IK demo: trace a continuous circle
-│   ├── train_grasp.py        # Train a SAC policy from scratch
-│   └── model_run.py          # Load the latest checkpoint and watch it run
-├── models/                   # Saved checkpoints (best_model.zip, ur5e_grasp_final.zip)
-└── logs/                     # Evaluation logs / TensorBoard logs
+│   ├── spawn_view.py    # Sanity check: spawn the arm, open the viewer
+│   ├── mink_test.py     # IK demo: cycle through fixed waypoints
+│   ├── mink_circulare.py# IK demo: trace a continuous circle
+│   ├── train_grasp.py   # Train a SAC policy from scratch
+│   └── model_run.py     # Load the latest checkpoint and watch it run
+├── models/              # directory that holds the model    } 
+└── logs/                # TensorBoard & evaluation logs     } generated once trained
 ```
 
 ## Requirements
@@ -63,13 +71,21 @@ RL_UR5_GRASP/
    cd RL_UR5_GRASP
    ```
 
-2. **Install dependencies**
+2. **Create and activate a virtual environment**
 
    ```bash
-   pip install mujoco mink gymnasium stable-baselines3 numpy loop_rate_limiters
+   python3 -m venv .venv
+   source .venv/bin/activate
    ```
 
-3. **Get the robot models (MuJoCo Menagerie)**
+3. **Install the package in editable mode**
+   
+   ```bash
+   pip install -e .
+   ```
+   
+
+4. **Get the robot models (MuJoCo Menagerie)**
 
    The environment expects the UR5e and Robotiq 2F-85 model files. Clone Menagerie into your home directory (the default the code looks for), or point `MUJOCO_MENAGERIE_PATH` at wherever you keep it:
 
@@ -84,20 +100,20 @@ RL_UR5_GRASP/
 **1. Sanity-check the setup** — spawns the bare UR5e arm in the MuJoCo viewer to confirm paths/models are correct:
 
 ```bash
-python scripts/spawn_view.py
+python3 src/rl_ur5_grasp/scripts/spawn_view.py
 ```
 
 **2. Try the IK solver on its own** — before touching RL, these confirm mink is driving the arm correctly:
 
 ```bash
-python scripts/mink_test.py        # cycles through fixed waypoints
-python scripts/mink_circulare.py   # traces a continuous circle
+python3 src/rl_ur5_grasp/scripts/mink_test.py        # cycles through fixed waypoints
+python3 src/rl_ur5_grasp/scripts/mink_circulare.py   # traces a continuous circle
 ```
 
 **3. Train the SAC agent from scratch:**
 
 ```bash
-python scripts/train_grasp.py
+python3 src/rl_ur5_grasp/scripts/train_grasp.py
 ```
 
 This runs 300k timesteps, evaluates every 5k steps, and saves the best-performing checkpoint to `models/best_model.zip` plus the final model to `models/ur5e_grasp_final.zip`. Training logs are written to `logs/` (viewable with `tensorboard --logdir logs`).
