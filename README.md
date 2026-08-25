@@ -1,7 +1,7 @@
 
 # RL_UR5_GRASP
 
-A Deep Reinforcement Learning pipeline using **SAC** (Soft Actor-Critic), **Gymnasium**, and **MuJoCo** to train a UR5e robotic arm — fitted with a Robotiq 2F-85 gripper — to autonomously reach, grasp, and lift a cube. End-effector control is handled through **mink** (differential IK), so the policy operates in Cartesian action space instead of raw joint torques.
+A Deep Reinforcement Learning pipeline using **SAC** (Soft Actor-Critic), **Gymnasium**, and **MuJoCo** to train a UR5e robotic arm — fitted with a Robotiq 2F-85 gripper — to autonomously reach, grasp, and lift a cube. End-effector control is handled through **mink** (differential IK), so the policy operates in Cartesian action space instead of raw joint position reducing the actions space .
 
 
 ## Demo
